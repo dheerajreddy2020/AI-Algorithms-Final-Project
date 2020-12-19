@@ -1,0 +1,2 @@
+Please run the jupyter notebook from ML model and evaluation before running this code
+Model Can be deployed by running the app.py file in the conda environment

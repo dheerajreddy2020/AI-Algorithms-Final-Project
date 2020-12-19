@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Predict sales of the store</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+	<h2>Predict Sales value</h2>
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	Date: <input type="text" name="Date" placeholder="yyyy-mm-dd" required="required" >
+        Assortment: <input type="text" name="Assortment" placeholder="Assortment a or b or c" required="required" />
+		Store Type : <input type="text" name="StoreType" placeholder="a or b or c or d" required="required" />
+		Is it a School holiday : <input type="number" name="School_holiday" placeholder="0 or 1" required="required" />
+		Is it a State holiday : <input type="number" name="State_holiday" placeholder="0 or 1" required="required" />
+		Does Promo 1 exists on that day : <input type="number" name="Promo1" placeholder="0 or 1" required="required" />
+		Does Promo 2 exists on that day : <input type="number" name="Promo2" placeholder="0 or 1" required="required" />
+		Does Competition exists :  <input type="number" name="Competition_exists" placeholder="0 or 1" required="required" />
+		Distance from the closest Competition :   <input type="number" name="CompetitionDistance" placeholder="in kms" required="required" />
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
