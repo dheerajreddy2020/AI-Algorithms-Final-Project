@@ -15,10 +15,4 @@ python app.py
 By default, flask will run on port 5000.
 
 2. Navigate to URL http://localhost:5000
-
-
-3. You can also send direct POST requests to FLask API using Python's inbuilt request module
-Run the beow command to send the request with some pre-popuated values -
-```
-python request.py
 ```
